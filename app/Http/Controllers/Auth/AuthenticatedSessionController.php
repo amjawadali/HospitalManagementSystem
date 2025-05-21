@@ -16,6 +16,9 @@ class AuthenticatedSessionController extends Controller
      */
     public function create(): View
     {
+        if (Auth::check()) {
+            return view('dashboard', ['message' => 'You are already logged in.']);
+        }
         return view('auth.login');
     }
 

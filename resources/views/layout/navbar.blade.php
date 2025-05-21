@@ -27,29 +27,6 @@
              <x-patient-notification-dropdown />
          @endif
 
-         @if (Auth::user()->role_id == 1)
-             <li class="dropdown"><a href="#" data-toggle="dropdown"
-                     class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                     <img alt="image"
-                         src="{{ Auth::user()->user_image ? asset('/' . Auth::user()->user_image) : asset('images/users/default.png') }}"
-                         class="user-img-radious-style"> <span class="d-sm-none d-lg-inline-block"></span></a>
-                 <div class="dropdown-menu dropdown-menu-right pullDown">
-                     <div class="dropdown-title">Hello {{ Auth::user()->name }}</div>
-                     <a href="{{ route('users.edit', Auth::user()->id) }}" class="dropdown-item has-icon"> <i
-                             class="far fa-user"></i> Profile</a>
-                     <div class="dropdown-divider"></div>
-
-                     <a href="#" class="dropdown-item has-icon text-danger"
-                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                         <i class="fas fa-sign-out-alt"></i> Logout
-                     </a>
-                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                         @csrf
-                     </form>
-                 </div>
-             </li>
-         @endif
-
          @if (Auth::user()->role_id == 2)
              <li class="dropdown"><a href="#" data-toggle="dropdown"
                      class="nav-link dropdown-toggle nav-link-lg nav-link-user">

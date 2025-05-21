@@ -31,17 +31,17 @@ class AppointmentConrolller extends Controller
     public function list()
     {
         if (Auth::user()->role_id == 2) {
-            $appointments = Appointment::whereNotIn('status', ['pending','cancel','rejected'])
+            $appointments = Appointment::where('status', ['pending','cancel','rejected'])
                 ->where('doctor_id', Auth::user()->doctor->id)
                 ->with('doctor', 'patient', 'slot')
                 ->get();
         } elseif (Auth::user()->role_id == 4) {
-            $appointments = Appointment::whereNotIn('status', ['pending','cancel','rejected'])
+            $appointments = Appointment::where('status', ['pending','cancel','rejected'])
                 ->where('patient_id', Auth::user()->patient->id)
                 ->with('doctor', 'patient', 'slot')
                 ->get();
         } else {
-            $appointments = Appointment::whereNotIn('status', ['pending','cancel','rejected'])
+            $appointments = Appointment::where('status', ['pending','cancel','rejected'])
                 ->with('doctor', 'patient', 'slot')
                 ->get();
         }

@@ -4,9 +4,9 @@ use App\Http\Controllers\Doctor\DoctorPreferenceController;
 use App\Http\Controllers\Doctor\DoctorScheduleController;
 use Illuminate\Support\Facades\Route;
 
-// Route::fallback(function () {
-//     return view('dashboard');
-// });
+Route::fallback(function () {
+    return view('dashboard');
+});
 
 Route::middleware('auth')->prefix('doctor')->controller(DoctorScheduleController::class)->group(function () {
     // Route::get('/', 'index')->name('doctor.schedule.index');

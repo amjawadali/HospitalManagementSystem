@@ -5,8 +5,14 @@ use App\Http\Controllers\Patient\PatientConsultationController;
 use App\Http\Controllers\Patient\PatientController;
 use Illuminate\Support\Facades\Route;
 
+Route::fallback(function () {
+    return view('dashboard');
+});
+
 
 Route::middleware('auth')->group(function () {
+
+
 
     Route::prefix('patient')->controller(AppointmentConrolller::class)->group(function () {
         // Route::get('/', 'index')->name('Paitent.schedule.index');

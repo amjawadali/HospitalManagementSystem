@@ -9,6 +9,10 @@ Route::get('/login', function () {
     return view('auth.login');
 });
 
+Route::fallback(function () {
+    return view('dashboard');
+});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

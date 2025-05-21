@@ -1,4 +1,4 @@
-@extends('layout.main')
+`@extends('layout.main')
 
 <div class="loader"></div>
 <div id="app">
@@ -49,7 +49,7 @@
                                     </button>
                                 </div>
                             </form>
-                           
+
                         </div>
                     </div>
 

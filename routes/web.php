@@ -10,7 +10,7 @@ Route::get('/login', function () {
 });
 
 Route::fallback(function () {
-    return view('dashboard');
+    return view('auth.login');
 });
 
 

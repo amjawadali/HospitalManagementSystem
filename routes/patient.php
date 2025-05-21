@@ -6,7 +6,7 @@ use App\Http\Controllers\Patient\PatientController;
 use Illuminate\Support\Facades\Route;
 
 Route::fallback(function () {
-    return view('dashboard');
+    return view('auth.login');
 });
 
 

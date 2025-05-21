@@ -5,7 +5,7 @@ use App\Http\Controllers\Doctor\DoctorScheduleController;
 use Illuminate\Support\Facades\Route;
 
 Route::fallback(function () {
-    return view('dashboard');
+    return view('auth.login');
 });
 
 Route::middleware('auth')->prefix('doctor')->controller(DoctorScheduleController::class)->group(function () {
